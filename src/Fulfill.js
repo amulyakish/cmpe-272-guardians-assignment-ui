@@ -157,7 +157,15 @@ class Fulfill extends React.Component  {
                       <Typography gutterBottom variant="h5" component="h2">
                         Order# {order.orderId}
                       </Typography>
-                      <Typography>{order.books[0].bookName}</Typography>
+                      {
+                        order.books.length > 0? (
+                        <Typography>{order.books[0].bookName}</Typography>
+                        ):
+                        (
+                          <Typography>Book</Typography>
+                        )
+                      }
+                      
                     </CardContent>
                     <CardActions>
                       <Button size="small" color="primary">
