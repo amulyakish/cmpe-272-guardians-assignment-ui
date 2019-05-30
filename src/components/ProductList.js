@@ -40,7 +40,7 @@ export default class ProductList extends Component {
       })
     }
     else{
-      window.location.reload();
+      this.setState({books: value.products });
     }
     console.log('ProductList componentDidMount', value);
   }
