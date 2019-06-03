@@ -16,6 +16,7 @@ import SearchIcon from '@material-ui/icons/Search'
 import Button from '@material-ui/core/Button'
 import SvgIcon from '@material-ui/core/SvgIcon'
 import Icon from '@material-ui/core/Icon'
+import history from '../History';
 
 const styles = theme => ({
   root: {
@@ -104,8 +105,8 @@ class SearchAppBar extends Component {
                 WALK
               </Typography>
             </Link>
-            <Button color="default" href="/" className={classes.menuButton}>Home</Button>
-            <Button color="default" href="/Fulfill">Fulfill Orders</Button>
+            <Button color="default" className={classes.menuButton} onClick={() => {history.push('/')}}>Home</Button>
+            <Button color="default" onClick={() => {history.push('/fulfill')}}>Fulfill Orders</Button>
             <div className={classes.grow} />
             {/* <div className={classes.search}>
               <div className={classes.searchIcon}>

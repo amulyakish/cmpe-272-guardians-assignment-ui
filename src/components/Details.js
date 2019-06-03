@@ -3,16 +3,26 @@ import { ProductConsumer } from '../context'
 import { ButtonContainer } from './Button'
 import { Link } from 'react-router-dom'
 import {ProductContext} from '../context';
+import history from '../History';
 
 export default class Details extends Component {
   static contextType = ProductContext;
 
   componentDidMount(){
     let value = this.context;
+    if(value == null || value.detailProduct == null){
+      history.replace('/');
+      return;
+    }
   }
   
   render() {
     let value = this.context;
+    if(value == null || value.detailProduct == null){
+      return (
+        <p> </p>
+      )
+    }
     const {
       bookId,
       author,
